@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     password = signin_params[:password]
     user = User.find_by(email: email)
     if user && user.authenticate(password)
-      sign_in(user)
+      sign_in user
+      signin_params[:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to current_user
     else
       flash.now[:danger] = I18n.t('message.invalid_signin')
@@ -16,14 +17,14 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    signed_out
+    signed_out if signed_in?
     redirect_to root_url
   end
 
   private
 
   def signin_params
-    params.require(:session).permit(:email, :password)
+    params.require(:session).permit(:email, :password, :remember_me)
   end
 
 end

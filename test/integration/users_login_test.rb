@@ -44,5 +44,23 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", signin_path
     assert_select "a[href=?]", signout_path, count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
+
+    # 2番目のウィンドウでログアウトをクリックするユーザーをシミュレートする
+    delete signout_path
+    follow_redirect!
+    assert_select "a[href=?]", signin_path
+    assert_select "a[href=?]", signout_path, count: 0
+    assert_select "a[href=?]", user_path(@user), count: 0
+  end
+
+  test "login with remembering" do
+    sign_in_as(@user, remember_me: '1')
+    assert_not_empty cookies['remember_token']
+  end
+
+  test "login without remembering" do
+    sign_in_as(@user, remember_me: '0') do
+      assert_empty cookies['remember_token']
+    end
   end
 end
