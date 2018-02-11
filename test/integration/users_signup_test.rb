@@ -31,5 +31,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'users/show'
     assert_equal flash[:success], 'ようこそ！Railsチュートリアルへ！'
+    assert is_signed_in?
   end
 end

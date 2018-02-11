@@ -37,3 +37,4 @@ group :production do
 end
 
 gem 'mysql2'
+gem 'pry-byebug'
