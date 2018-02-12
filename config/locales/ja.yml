@@ -39,6 +39,8 @@ ja:
   message:
     welcome: ようこそ！Railsチュートリアルへ！
     invalid_signin: メールアドレスまたはパスワードが正しくありません。
+    profile_updated: プロフィールを更新しました。
+    please_sign_in: ログインしてください。
 
   activerecord:
     errors:

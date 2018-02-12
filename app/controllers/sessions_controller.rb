@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(password)
       sign_in user
       signin_params[:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to current_user
+      redirect_back_or user
     else
       flash.now[:danger] = I18n.t('message.invalid_signin')
       render 'new'
