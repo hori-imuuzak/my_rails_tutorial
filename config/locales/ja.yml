@@ -41,6 +41,7 @@ ja:
     invalid_signin: メールアドレスまたはパスワードが正しくありません。
     profile_updated: プロフィールを更新しました。
     please_sign_in: ログインしてください。
+    user_destroyed: ユーザーを削除しました。
 
   activerecord:
     errors:
