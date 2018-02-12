@@ -7,9 +7,14 @@ class SessionsController < ApplicationController
     password = signin_params[:password]
     user = User.find_by(email: email)
     if user && user.authenticate(password)
-      sign_in user
-      signin_params[:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user
+      if user.activated?
+        sign_in user
+        signin_params[:remember_me] == '1' ? remember(user) : forget(user)
+        redirect_back_or user
+      else
+        flash[:warning] = I18n.t('message.user_not_activated_yet')
+        redirect_to root_url
+      end
     else
       flash.now[:danger] = I18n.t('message.invalid_signin')
       render 'new'

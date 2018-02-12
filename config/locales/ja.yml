@@ -38,10 +38,14 @@ ja:
 
   message:
     welcome: ようこそ！Railsチュートリアルへ！
+    please_activate: アカウントを有効にするためのURLをメールで送信しました。
     invalid_signin: メールアドレスまたはパスワードが正しくありません。
     profile_updated: プロフィールを更新しました。
     please_sign_in: ログインしてください。
     user_destroyed: ユーザーを削除しました。
+    user_activated: アカウントが有効になりました。
+    invalid_activation_url: 確認用URLが正しくありません。
+    user_not_activated_yet: アカウントが有効ではありません。有効にするためのメールを確認してください。
     mail:
       account_activation: ご登録ありがとうございます！アカウントを有効にしましょう。
 
