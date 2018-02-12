@@ -42,6 +42,8 @@ ja:
     profile_updated: プロフィールを更新しました。
     please_sign_in: ログインしてください。
     user_destroyed: ユーザーを削除しました。
+    mail:
+      account_activation: ご登録ありがとうございます！アカウントを有効にしましょう。
 
   activerecord:
     errors:
