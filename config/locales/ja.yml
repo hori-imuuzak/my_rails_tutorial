@@ -46,8 +46,13 @@ ja:
     user_activated: アカウントが有効になりました。
     invalid_activation_url: 確認用URLが正しくありません。
     user_not_activated_yet: アカウントが有効ではありません。有効にするためのメールを確認してください。
+    password_reset: パスワードの再設定
+    password_reset_success: パスワードを更新しました
+    password_expiration: 再設定URLの有効期限が切れています。再度再設定のURLを発行してください。
     mail:
       account_activation: ご登録ありがとうございます！アカウントを有効にしましょう。
+      not_found: メールアドレスが見つかりませんでした。
+      sent_reset_password: パスワード再設定URLを指定のメールアドレスに送信しました。
 
   activerecord:
     errors:
